@@ -8,7 +8,7 @@ O jogo quer criar um vínculo com o personagem por meio de uma rotina leve. Alim
 
 A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe sua classe e desenvolve seus atributos e habilidades. Roupas, cabelos e equipamentos em camadas permitem mudar a aparência do companheiro. O progresso ficará vinculado a uma conta com espaço para até três personagens.
 
-[**Baixar APK de homologação para Android**](https://github.com/FelpHendeson/myDigitalExistence/releases/download/g0-android-dev.1/myDigitalExistence-dev.apk) · 41,9 MiB · ARM64 · Android 6.0 ou superior.
+[**Baixar APK G1 para Android**](https://github.com/FelpHendeson/myDigitalExistence/releases/download/g1-android-dev.2/myDigitalExistence-g1-dev.apk) · 42,0 MiB · ARM64 · Android 6.0 ou superior.
 
 ## Estado e próximos passos
 
@@ -22,17 +22,30 @@ O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame d
 
 - Abra `client/` no Unity `6000.0.40f1` com Android Build Support e as ferramentas fornecidas pelo Hub. O ambiente de homologação tem SDKs API 33–35, Build Tools 34.0.0, NDK r27c e OpenJDK 17.
 - Em **File → Build Profiles**, ative o perfil [Android Development](client/Assets/Settings/Build%20Profiles/Android%20Development.asset). Ele usa a lista global com [Bootstrap](client/Assets/Game/Scenes/Bootstrap.unity) como cena inicial. **Development Build** está ativo e **Build App Bundle** está desativado.
-- Escolha **Build** e grave o APK em `client/Builds/Android/`, diretório ignorado pelo Git. O pacote é `com.felphendeson.mydigitalexistence`, versão `0.1.0-dev` (código 1), IL2CPP ARM64, API mínima 23 e alvo automático pelo SDK instalado. O APK usa assinatura de depuração.
+- Escolha **Build** e grave o APK em `client/Builds/Android/`, diretório ignorado pelo Git. O pacote é `com.felphendeson.mydigitalexistence`, versão `0.1.0-dev.2` (código 2), IL2CPP ARM64, API mínima 23 e alvo automático pelo SDK instalado. O APK usa assinatura de depuração.
 - O protótipo usa retrato como configuração técnica reversível. A Bootstrap usa o Input System e ajusta o painel à área segura. Em Play Mode, **Testar entrada** incrementa o contador de entradas.
 - Para aceitar ENV-05, instale o APK em um aparelho Android ARM64, confirme que a tela abre, toque em **Testar entrada** e confira se a contagem aumenta. Registre o aparelho, a versão do Android e erros de inicialização, se houver.
 
-### Resultado de homologação de 11/11/2026
+### Resultado de homologação G0 em 11/11/2026
+
+[APK da prévia G0](https://github.com/FelpHendeson/myDigitalExistence/releases/download/g0-android-dev.1/myDigitalExistence-dev.apk)
 
 - O Editor executou a Bootstrap em Play Mode e o botão mostrou `Entrada recebida (1)`. O botão também respondeu a toque simulado no perfil Google Pixel 5, em retrato, no Device Simulator. O Console permaneceu sem erros ou avisos nos testes de interação.
 - O Unity registrou `Succeeded` em 1152 s. APK local em `client/Builds/Android/myDigitalExistence-dev.apk` (43.924.560 bytes), compilado a partir da implementação registrada em `94d0992`. SHA-256: `cb224af3c7e3b433f136924fb3d17e5e93df6b4d99b6f1aa6c4c3e075d852d2e`.
 - `aapt2` confirmou atividade de inicialização, retrato, `arm64-v8a`, API mínima 23 e alvo 35. `apksigner` confirmou a assinatura de depuração (v1 e v2), com avisos sobre entradas de metadados em `META-INF` no esquema v1.
 - O log de compilação registrou avisos de shader de terreno do URP. O Gradle sinalizou metadados do SDK em pasta somente leitura e API Java depreciada na GameActivity do Unity. O empacotamento terminou com sucesso.
 - **G0 / ENV-05 aceito em 11/11/2026.** O diretor confirmou o funcionamento do APK no próprio celular após baixar a prévia. O modelo, a versão do Android e o Logcat não foram fornecidos.
+
+## Protótipo G1 · Meu quarto
+
+Em Play Mode, inicie pela Bootstrap e selecione **Abrir quarto**. Os controles alternam dois cabelos, duas roupas e duas peças de mão, com a opção **Mãos livres**. **Interagir** dispara uma reação e devolve o personagem ao idle. As escolhas duram enquanto a cena está aberta.
+
+- [Home](client/Assets/Game/Scenes/Home.unity), [prefab humanoide](client/Assets/Game/Prefabs/PrototypeHumanoid.prefab) e [catálogo de aparência v1](client/Assets/Game/Content/PrototypeAppearance.asset). Os IDs são estáveis, e o catálogo registra a compatibilidade com o corpo equilibrado e a ordem de cada quadro.
+- [Sprites originais provisórios](client/Assets/Game/Art/Prototype) em estado `CANDIDATO_JOGAVEL`. Para a vista frontal, usei quadros de 96 × 128 px, pivô em (48, 11) a partir do canto inferior esquerdo, 32 PPU, filtro Point, quatro quadros de idle e três de reação. A [fonte dos sprites](client/Tools/Generate-PrototypeArt.ps1) pode regenerar os nove PNGs pelo PowerShell no Windows. Preserve os arquivos `.meta` para manter as referências.
+- **Validação no Unity 6000.0.40f1.** Três EditMode passaram, incluindo IDs, dimensões, pivôs, compatibilidade e referências do prefab. Um PlayMode passou, cobrindo navegação, trocas no mesmo quadro, ordem das camadas, mãos livres e retorno ao idle. O Device Simulator mostrou a composição e os controles em retrato nos perfis Pixel 5 e Galaxy S10e.
+
+- **APK do G1.** O build Android levou 322 s e o relatório Unity registrou sucesso, com zero erros e zero avisos. As cenas Bootstrap e Home foram incluídas. O manifesto e a assinatura de depuração foram verificados. O APK da prévia tem 44.068.185 bytes e SHA-256 `3163a52c647add507d0bb26d5b6e7e8a562099559e0f82d23f20b7235cd0ec45`.
+- **ART-09 e aceite G1 pendentes.** O ADB não listou dispositivo. Falta confirmar o APK em aparelho real, incluindo legibilidade, alinhamento, fluidez e consumo de memória.
 
 ## Documentação
 
