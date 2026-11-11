@@ -6,6 +6,8 @@
 | --- | --- | --- |
 | D01 | Decisão | Unity 2D + C#; stack confirmada para o cliente |
 | D02 | Decisão | Documentação Markdown em `myDigitalExistence/` no FelpZone |
+| D03 | Decisão (11/11/2026) | O criador participa e aprova a direção artística e decisões conceituais de funcionalidades, raças, habilidades, classes, aparência, customização, equipamentos e pets; o agente deve colaborar com ideias e registrar decisões, nunca definir sozinho o cânone. |
+| D04 | Decisão (11/11/2026) | O agente tem autonomia na implementação técnica, editor Unity autorizado, código e arquitetura com convenções legíveis, testes e padrões de engenharia reconhecidos; não precisa consultar o criador para detalhes técnicos rotineiros. |
 | R01 | Requisito | Jogo mobile de pet/personagem/entidade virtual humanoide em pixel art |
 | R02 | Requisito | Base visual reutilizável e personalização em camadas |
 | R03 | Requisito | Conta vinculada ao progresso |
@@ -20,6 +22,14 @@
 | R12 | Requisito | Base jogável, sólida e bonita antes de expansão temática |
 
 Requisitos registram intenção do produto, não aprovação de todas as regras necessárias para implementá-la.
+
+## Autorização adicional de 11/11/2026
+
+**D05 — Escopo criativo delegado para a base inicial:** o usuário permitiu descrever e preparar modelos humanoides iniciais, personalizações de aparência, equipamentos de entrada, raças, runas e habilidades, inspirando-se nos princípios de Shadow Slave, Lord of Mysteries, Naruto, Black Clover, Jujutsu Kaisen, Bleach e RPGs, para construir progressivamente uma V1. O agente pode **implementar** o pacote candidato descrito em 22–26 sem pedir aprovação a cada detalhe técnico. **Não houve aprovação final de cada nome, efeito, paleta, silhueta ou parâmetro de balanceamento.** O criador continuará refinando a direção criativa conjuntamente; novas ideias além desse recorte exigem coautoria.
+
+**Conteúdo em estado CANDIDATO_JOGAVEL:** 4 raças (Humano, Elfo, Dracônico, Vesperino), 3 runas (Pulso, Véu, Forja), 6 afinidades, 6 núcleos, 3 classes, 3 compleições de corpo, personalizações e 18 equipamentos de entrada. Todos são designs originais propostos para prova jogável, revisáveis, não lore final.
+
+**Inspiração e direitos:** conceitos de profundidade, restrições e progressão podem ser aprendidos de obras conhecidas; não reproduzir personagens, nomes de técnicas, símbolos ou arte identificável sem direitos. Ver 22-pacote-conteudo-v1.md.
 
 ## Histórico tecnológico
 
@@ -71,3 +81,11 @@ Ao aprovar uma proposta, registrar data e evidência da escolha e atualizar os d
 Fonte: requisitos de produto fornecidos para esta documentação.
 
 Esta documentação sintetiza as ideias, com foco exclusivo no produto. Regras detalhadas novas aparecem como propostas. Não foram verificadas nesta entrega cotas comerciais nem produzidos executáveis.
+
+## Acordo de trabalho consolidado em 11/11/2026
+
+O conteúdo de D03 e D04 foi explicitamente reforçado pelo criador. Toda nova habilidade, raça, class, regra criativa, aparência, lista de equipamentos, preços e recompensas definitivas exige discussão/aprovação conjunta; propostas no GDD e exemplos técnicos não viram cânone automaticamente. Código, testes, arquitetura e fluxo Unity são executados pelo agente com autonomia técnica, preservando arte/dados existentes e respeitando autorizações de ações externas.
+
+**Documentos normativos:** [AGENTS.md](AGENTS.md) e [15-governanca-criativa.md](15-governanca-criativa.md). Especificações executáveis: [16](16-especificacao-unity.md), [17](17-contratos-de-dominio.md), [18](18-pipeline-visual.md), [19](19-ux-e-qa.md), [20](20-contratos-online.md) e [21](21-roteiro-agentes.md).
+
+**Registro de estado:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Editor `6000.0.40f1`. Android foi reconhecido em Build Profiles após a instalação dos módulos e o reinício do Editor. A compilação e o teste em aparelho ainda são pendências de G0.
