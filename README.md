@@ -8,6 +8,8 @@ O jogo quer criar um vínculo com o personagem por meio de uma rotina leve. Alim
 
 A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe sua classe e desenvolve seus atributos e habilidades. Roupas, cabelos e equipamentos em camadas permitem mudar a aparência do companheiro. O progresso ficará vinculado a uma conta com espaço para até três personagens.
 
+[**Baixar APK de homologação para Android**](https://github.com/FelpHendeson/myDigitalExistence/releases/download/g0-android-dev.1/myDigitalExistence-dev.apk) · 41,9 MiB · ARM64 · Android 6.0 ou superior.
+
 ## Estado e próximos passos
 
 O projeto Universal 2D está em `client/`, com Unity `6000.0.40f1`, URP `17.0.4` e Input System `1.13.0`. A cena Bootstrap abre no Editor e já tem um APK de desenvolvimento compilado. A `SampleScene` original continua em `client/Assets/Scenes/`.
