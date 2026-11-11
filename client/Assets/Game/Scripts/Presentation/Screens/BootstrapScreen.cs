@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MyDigitalExistence.Presentation
@@ -9,48 +10,45 @@ namespace MyDigitalExistence.Presentation
         [SerializeField] private Text _buildLabel;
         [SerializeField] private Text _inputStatus;
         [SerializeField] private Button _testButton;
+        [SerializeField] private Button _homeButton;
 
-        private Rect _lastSafeArea;
-        private Vector2Int _lastScreenSize;
+        private SafeAreaLayout _safeAreaLayout;
         private int _tapCount;
+
+        private void Awake()
+        {
+            _safeAreaLayout = new SafeAreaLayout(_safeArea);
+        }
 
         private void OnEnable()
         {
             string buildMode = Application.isEditor ? "Editor" : Debug.isDebugBuild ? "Desenvolvimento" : "Release";
             _buildLabel.text = $"{buildMode}  •  v{Application.version}";
             _testButton.onClick.AddListener(ConfirmInput);
-            UpdateSafeArea();
+            _homeButton.onClick.AddListener(OpenHome);
+            _safeAreaLayout.Refresh();
         }
 
         private void OnDisable()
         {
             _testButton.onClick.RemoveListener(ConfirmInput);
+            _homeButton.onClick.RemoveListener(OpenHome);
         }
 
         private void Update()
         {
-            UpdateSafeArea();
-        }
-
-        private void UpdateSafeArea()
-        {
-            var screenSize = new Vector2Int(Screen.width, Screen.height);
-            Rect safeArea = Screen.safeArea;
-            if (screenSize == _lastScreenSize && safeArea == _lastSafeArea)
-            {
-                return;
-            }
-
-            _lastScreenSize = screenSize;
-            _lastSafeArea = safeArea;
-            _safeArea.anchorMin = new Vector2(safeArea.xMin / screenSize.x, safeArea.yMin / screenSize.y);
-            _safeArea.anchorMax = new Vector2(safeArea.xMax / screenSize.x, safeArea.yMax / screenSize.y);
+            _safeAreaLayout.Refresh();
         }
 
         private void ConfirmInput()
         {
             _tapCount++;
             _inputStatus.text = $"Entrada recebida ({_tapCount})";
+        }
+
+        private static void OpenHome()
+        {
+            SceneManager.LoadScene("Home");
         }
     }
 }
