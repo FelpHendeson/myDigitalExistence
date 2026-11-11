@@ -5,7 +5,7 @@
 | ID | Estado | Registro e origem |
 | --- | --- | --- |
 | D01 | Decisão | Unity 2D + C#; stack confirmada para o cliente |
-| D02 | Decisão | Documentação Markdown em `myDigitalExistence/` no FelpZone |
+| D02 | Decisão | Documentação Markdown na raiz do repositório `FelpHendeson/myDigitalExistence`, migrada do FelpZone |
 | D03 | Decisão (11/11/2026) | O criador participa e aprova a direção artística e decisões conceituais de funcionalidades, raças, habilidades, classes, aparência, customização, equipamentos e pets; o agente deve colaborar com ideias e registrar decisões, nunca definir sozinho o cânone. |
 | D04 | Decisão (11/11/2026) | O agente tem autonomia na implementação técnica, editor Unity autorizado, código e arquitetura com convenções legíveis, testes e padrões de engenharia reconhecidos; não precisa consultar o criador para detalhes técnicos rotineiros. |
 | R01 | Requisito | Jogo mobile de pet/personagem/entidade virtual humanoide em pixel art |
@@ -88,4 +88,4 @@ O conteúdo de D03 e D04 foi explicitamente reforçado pelo criador. Toda nova h
 
 **Documentos normativos:** [AGENTS.md](AGENTS.md) e [15-governanca-criativa.md](15-governanca-criativa.md). Especificações executáveis: [16](16-especificacao-unity.md), [17](17-contratos-de-dominio.md), [18](18-pipeline-visual.md), [19](19-ux-e-qa.md), [20](20-contratos-online.md) e [21](21-roteiro-agentes.md).
 
-**Registro de estado:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Editor `6000.0.40f1`. Android foi reconhecido em Build Profiles após a instalação dos módulos e o reinício do Editor. A compilação e o teste em aparelho ainda são pendências de G0.
+**Registro de estado:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Editor `6000.0.40f1`. Android foi reconhecido em Build Profiles após a instalação dos módulos e o reinício do Editor. O APK de homologação foi compilado. O teste em aparelho segue pendente. Consulte a evidência e o procedimento no [README](README.md#build-de-homologação-android).

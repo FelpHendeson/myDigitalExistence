@@ -15,7 +15,7 @@ Versão 1.0 — 11/11/2026. Guia operacional **executável em sequência** pelo 
 **Ações:**
 1. Abrir Unity Hub e editor (se acesso autorizado) e registrar versões, módulos SDK/NDK/JDK, status de licenças.
 2. Verificar repositório, pasta myDigitalExistence/client e .gitignore. Não criar projeto duplicado se existir.
-3. Criar projeto 2D leve na localização aprovada por convenção, sem HDRP/3D e pacotes irrelevantes.
+3. Configurar o projeto Universal 2D existente em `client/` com as dependências registradas.
 4. Configurar serialização texto, Visible Meta Files, identificação técnica provisória do app, entrada de teste e cena Bootstrap.
 5. Inspecionar erros Console e corrigir referências.
 6. Criar Build Profile Android, incluir cena, produzir APK Development Build.

@@ -10,11 +10,27 @@ A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe
 
 ## Estado e próximos passos
 
-O projeto Unity Universal 2D está em `client/` e abriu a `SampleScene` com o Editor `6000.0.40f1`. Android Build Support, Android SDK & NDK Tools e OpenJDK foram instalados, e o Editor reconheceu Android em **File → Build Profiles**.
+O projeto Universal 2D está em `client/`, com Unity `6000.0.40f1`, URP `17.0.4` e Input System `1.13.0`. A cena Bootstrap abre no Editor e já tem um APK de desenvolvimento compilado. A `SampleScene` original continua em `client/Assets/Scenes/`.
 
 O primeiro marco (G0) termina quando um APK mínimo rodar em um aparelho Android. Em seguida, a primeira prova visual (G1) prevê um personagem modular com animação de repouso e troca de peça em um quarto simples. Os critérios estão no [plano mestre](12-plano-mestre.md) e no [backlog](13-backlog-execucao.md).
 
 O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame de mana, progressão inicial, inventário, loja e salvamento online. O fornecedor do backend ainda está em aberto. Classes completas e pets do personagem aparecem em etapas posteriores do [roadmap](10-roadmap.md).
+
+## Build de homologação Android
+
+- Abra `client/` no Unity `6000.0.40f1` com Android Build Support e as ferramentas fornecidas pelo Hub. O ambiente de homologação tem SDKs API 33–35, Build Tools 34.0.0, NDK r27c e OpenJDK 17.
+- Em **File → Build Profiles**, ative o perfil [Android Development](client/Assets/Settings/Build%20Profiles/Android%20Development.asset). Ele usa a lista global com [Bootstrap](client/Assets/Game/Scenes/Bootstrap.unity) como cena inicial. **Development Build** está ativo e **Build App Bundle** está desativado.
+- Escolha **Build** e grave o APK em `client/Builds/Android/`, diretório ignorado pelo Git. O pacote é `com.felphendeson.mydigitalexistence`, versão `0.1.0-dev` (código 1), IL2CPP ARM64, API mínima 23 e alvo automático pelo SDK instalado. O APK usa assinatura de depuração.
+- O protótipo usa retrato como configuração técnica reversível. A Bootstrap usa o Input System e ajusta o painel à área segura. Em Play Mode, **Testar entrada** incrementa o contador de entradas.
+- Para aceitar ENV-05, instale o APK em um aparelho Android ARM64, confirme que a tela abre, toque em **Testar entrada** e confira se a contagem aumenta. Registre o aparelho, a versão do Android e erros de inicialização, se houver.
+
+### Resultado de homologação de 11/11/2026
+
+- O Editor executou a Bootstrap em Play Mode e o botão mostrou `Entrada recebida (1)`. O botão também respondeu a toque simulado no perfil Google Pixel 5, em retrato, no Device Simulator. O Console permaneceu sem erros ou avisos nos testes de interação.
+- O Unity registrou `Succeeded` em 1152 s. APK local em `client/Builds/Android/myDigitalExistence-dev.apk` (43.924.560 bytes), compilado a partir da implementação registrada em `94d0992`. SHA-256: `cb224af3c7e3b433f136924fb3d17e5e93df6b4d99b6f1aa6c4c3e075d852d2e`.
+- `aapt2` confirmou atividade de inicialização, retrato, `arm64-v8a`, API mínima 23 e alvo 35. `apksigner` confirmou a assinatura de depuração (v1 e v2), com avisos sobre entradas de metadados em `META-INF` no esquema v1.
+- O log de compilação registrou avisos de shader de terreno do URP. O Gradle sinalizou metadados do SDK em pasta somente leitura e API Java depreciada na GameActivity do Unity. O empacotamento terminou com sucesso.
+- **G0 / ENV-05 em aberto.** O ADB não listou um aparelho. Instalação, abertura e toque no Android físico seguem pendentes. Depois desse teste, o próximo item é ART-01, seguido de VIS-01 com o primeiro humanoide modular.
 
 ## Documentação
 

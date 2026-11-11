@@ -14,7 +14,7 @@ Cada cartão possui: ID, dependência, entrega e critério de aceite. Só marcar
 | --- | --- | --- | --- |
 | ENV-01 | P0 | — | Registrar versão Unity, template, sistema e aparelho; projeto abre sem erro |
 | ENV-02 | P0 | ENV-01 | Confirmar Android SDK/NDK/OpenJDK via Unity Hub e verificar saída do build |
-| ENV-03 | P0 | ENV-01 | Criar projeto Unity 2D e fixar packages, settings e gitignore correto |
+| ENV-03 | P0 | ENV-01 | Configurar o projeto Universal 2D existente e versionar dependências, settings e regras de ignore |
 | ENV-04 | P0 | ENV-03 | Cena Bootstrap/Homologação com interface mínima; Play funciona no Editor |
 | ENV-05 | P0 | ENV-02/04 | APK instalável e aberto em celular real; registrar comportamento e falhas |
 | ENV-06 | P1 | ENV-03 | Pipeline de commits e convenção de branches/versões documentados |

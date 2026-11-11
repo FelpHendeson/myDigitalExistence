@@ -14,9 +14,9 @@ Legendas:
 - **GATE:** evidência obrigatória para avançar.
 - **FEITO:** somente após evidência de execução/teste, nunca por documentação pronta.
 
-**D:** Unity 2D + C#; Android como plataforma inicial; documentação em Markdown em myDigitalExistence no repositório FelpZone.
+**D:** Unity 2D + C#; Android como plataforma inicial; documentação em Markdown na raiz de `FelpHendeson/myDigitalExistence`.
 **R:** pixel art, humanoide modular, até 3 personagens por conta, runas com brilho azul, origem/raça e elemento, habilidades centrais, RPG, cuidados, mana, minigames, loja e pets futuramente.
-**Situação verificada em 11/11/2026:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Os módulos Android foram instalados e reconhecidos em Build Profiles. A compilação e a execução de um APK em aparelho continuam pendentes.
+**Situação verificada em 11/11/2026:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Os módulos Android foram instalados e reconhecidos em Build Profiles. O APK da Bootstrap foi compilado. A execução em aparelho continua pendente. Consulte o [registro de homologação](README.md#resultado-de-homologação-de-11112026).
 **ABERTO:** versão do Editor a adotar para distribuição, escopo de publicação, Android de referência, orientação, nome comercial, tipo de autenticação, hospedagem e regras finas.
 
 ## 1. Visão e critérios de sucesso
@@ -202,6 +202,6 @@ Não declarar gate concluído sem passar no dispositivo e manter evidências. Fa
 
 ## 11. Critérios de encerramento e próximo passo real
 
-Este documento é concluído quando revisado e publicado; **o jogo continua em planejamento**. O primeiro próximo passo de implementação é G0: fixar versão Unity, criar projeto 2D leve, preparar Git e compilar uma cena mínima para Android. Em seguida G1: provar humanoide modular animado e uma troca de peça antes de produzir muitas raças ou itens.
+Este documento é concluído quando revisado e publicado; **o jogo continua em planejamento**. O G0 usa o projeto Universal 2D existente em `client/` e exige executar o APK da cena Bootstrap em um aparelho Android. Em seguida G1: provar humanoide modular animado e uma troca de peça antes de produzir muitas raças ou itens.
 
 Acompanhar execução no [backlog](13-backlog-execucao.md), testar segundo [matriz de QA](14-qualidade-validacao.md) e preservar as regras de origem no GDD. A qualquer momento, atualizar o plano se novos fatos do projeto mudarem prioridades.
