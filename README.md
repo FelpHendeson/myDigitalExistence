@@ -14,7 +14,7 @@ A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe
 
 O projeto Universal 2D está em `client/`, com Unity `6000.0.40f1`, URP `17.0.4` e Input System `1.13.0`. A cena Bootstrap abre no Editor e já tem um APK de desenvolvimento compilado. A `SampleScene` original continua em `client/Assets/Scenes/`.
 
-O primeiro marco (G0) termina quando um APK mínimo rodar em um aparelho Android. Em seguida, a primeira prova visual (G1) prevê um personagem modular com animação de repouso e troca de peça em um quarto simples. Os critérios estão no [plano mestre](12-plano-mestre.md) e no [backlog](13-backlog-execucao.md).
+O G0 foi aceito após o diretor confirmar que o APK funcionou no celular. O G1 começa com um humanoide modular que respira, reage e troca peças em um quarto simples. Os critérios estão no [plano mestre](12-plano-mestre.md) e no [backlog](13-backlog-execucao.md).
 
 O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame de mana, progressão inicial, inventário, loja e salvamento online. O fornecedor do backend ainda está em aberto. Classes completas e pets do personagem aparecem em etapas posteriores do [roadmap](10-roadmap.md).
 
@@ -32,7 +32,7 @@ O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame d
 - O Unity registrou `Succeeded` em 1152 s. APK local em `client/Builds/Android/myDigitalExistence-dev.apk` (43.924.560 bytes), compilado a partir da implementação registrada em `94d0992`. SHA-256: `cb224af3c7e3b433f136924fb3d17e5e93df6b4d99b6f1aa6c4c3e075d852d2e`.
 - `aapt2` confirmou atividade de inicialização, retrato, `arm64-v8a`, API mínima 23 e alvo 35. `apksigner` confirmou a assinatura de depuração (v1 e v2), com avisos sobre entradas de metadados em `META-INF` no esquema v1.
 - O log de compilação registrou avisos de shader de terreno do URP. O Gradle sinalizou metadados do SDK em pasta somente leitura e API Java depreciada na GameActivity do Unity. O empacotamento terminou com sucesso.
-- **G0 / ENV-05 em aberto.** O ADB não listou um aparelho. Instalação, abertura e toque no Android físico seguem pendentes. Depois desse teste, o próximo item é ART-01, seguido de VIS-01 com o primeiro humanoide modular.
+- **G0 / ENV-05 aceito em 11/11/2026.** O diretor confirmou o funcionamento do APK no próprio celular após baixar a prévia. O modelo, a versão do Android e o Logcat não foram fornecidos.
 
 ## Documentação
 

@@ -16,7 +16,7 @@ Legendas:
 
 **D:** Unity 2D + C#; Android como plataforma inicial; documentação em Markdown na raiz de `FelpHendeson/myDigitalExistence`.
 **R:** pixel art, humanoide modular, até 3 personagens por conta, runas com brilho azul, origem/raça e elemento, habilidades centrais, RPG, cuidados, mana, minigames, loja e pets futuramente.
-**Situação verificada em 11/11/2026:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Os módulos Android foram instalados e reconhecidos em Build Profiles. O APK da Bootstrap foi compilado. A execução em aparelho continua pendente. Consulte o [registro de homologação](README.md#resultado-de-homologação-de-11112026).
+**Situação verificada em 11/11/2026:** o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Os módulos Android foram instalados e reconhecidos em Build Profiles. O APK da Bootstrap foi compilado. O diretor confirmou a execução do APK no próprio celular em 11/11/2026. Consulte o [registro de homologação](README.md#resultado-de-homologação-de-11112026).
 **ABERTO:** versão do Editor a adotar para distribuição, escopo de publicação, Android de referência, orientação, nome comercial, tipo de autenticação, hospedagem e regras finas.
 
 ## 1. Visão e critérios de sucesso

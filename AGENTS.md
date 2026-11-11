@@ -56,6 +56,6 @@ G2: cuidado + mana + progressão/inventário fictícios + save local DEV.
 G3: conta, slots, invocação e economia online seguros.
 G4: MVP 0.1 completo e testado.
 
-Estado verificado em 11/11/2026: o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Android Build Support, Android SDK & NDK Tools e OpenJDK foram instalados, e Android aparece em Build Profiles. G0 segue aberto até a validação de um APK em aparelho Android. Não marcar itens como concluídos sem evidência.
+Estado verificado em 11/11/2026: o projeto Universal 2D em `client/` abriu a `SampleScene` no Unity `6000.0.40f1`. Android Build Support, Android SDK & NDK Tools e OpenJDK foram instalados, e Android aparece em Build Profiles. G0 foi aceito em 11/11/2026 após o diretor confirmar que o APK da prévia funcionou no celular. Não marcar itens como concluídos sem evidência.
 
 Ver detalhes de responsabilidades e workflow em 15-governanca-criativa.md, e specs executáveis nos arquivos 16–20.
