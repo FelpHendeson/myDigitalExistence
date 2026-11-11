@@ -1,23 +1,23 @@
 # myDigitalExistence
 
-Documentação de um jogo mobile de personagem virtual com progressão RPG em pixel art.
+myDigitalExistence é um projeto de jogo mobile em pixel art que combina os cuidados de um pet virtual com a progressão de um RPG. O jogador invoca um companheiro humanoide por meio de uma runa, cuida dele no dia a dia e acompanha seu crescimento. A plataforma inicial é Android, com o cliente planejado em Unity 2D e C#.
 
-**Estado em 09/11/2026:** planejamento; esta entrega contém somente documentação. Não há projeto Unity, APK, backend ou funcionalidade implementada nesta pasta. O nome da pasta é confirmado; o título comercial do jogo ainda não foi escolhido.
+## Propósito
 
-## Como ler
+O jogo quer criar um vínculo com o personagem por meio de uma rotina leve. Alimentar, descansar e cuidar da higiene e da saúde do companheiro faz parte da experiência, assim como treinar mana, jogar minigames e ganhar recursos para personalizá-lo.
 
-- **Decisão:** escolha explícita do autor na conversa ou no pedido atual.
-- **Requisito:** característica desejada pelo autor; a implementação e o balanceamento ainda precisam ser definidos.
-- **Proposta:** solução sugerida pelo assistente, inclusive detalhes novos desta documentação; depende de validação.
-- **Pendente:** pergunta sem resposta ou escolha técnica/criativa ainda necessária.
-- **Histórico superado:** alternativa discutida antes da decisão final.
+A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe sua classe e desenvolve seus atributos e habilidades. Roupas, cabelos e equipamentos em camadas permitem mudar a aparência do companheiro. O progresso ficará vinculado a uma conta com espaço para até três personagens.
 
-Uma proposta detalhada não se torna decisão por estar documentada. Números ilustrativos não representam balanceamento aprovado.
+## Estado e próximos passos
 
-## Índice
+O projeto está em planejamento e o repositório reúne a documentação de design e técnica. A primeira etapa proposta é testar no Android um personagem modular com animações, troca de peças e uma ação de cuidado.
 
-1. [Visão e contexto](01-visao.md)
-2. [GDD do MVP](02-gdd-mvp.md)
+O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame de mana, progressão inicial, inventário, loja e salvamento online. O fornecedor do backend ainda está em aberto. Classes completas e pets do personagem aparecem em etapas posteriores do [roadmap](10-roadmap.md).
+
+## Documentação
+
+1. [Visão do jogo](01-visao.md)
+2. [Design do MVP](02-gdd-mvp.md)
 3. [Personagens modulares e direção artística](03-personagens-modulares.md)
 4. [Runas e invocação](04-runas-invocacao.md)
 5. [Raças, classes, atributos e habilidades](05-progressao-rpg.md)
@@ -25,23 +25,5 @@ Uma proposta detalhada não se torna decisão por estar documentada. Números il
 7. [Economia, loja e pets](07-economia-pets.md)
 8. [Arquitetura Unity e persistência](08-arquitetura.md)
 9. [Planejamento do backend online](09-backend-online.md)
-10. [Roadmap e validação](10-roadmap.md)
-11. [Decisões, histórico e pendências](11-decisoes-pendencias.md)
-
-## Base confirmada
-
-**Decisão:** Unity 2D + C# para o cliente. **Requisitos:** Android/mobile, pixel art, humanoide personalizável, conta ligada ao progresso, invocação por runas, até três personagens, cuidados e progressão RPG. Backend online com objetivo de custo inicial zero; fornecedor e tecnologia não escolhidos.
-
-**Proposta de recorte:** primeiro validar um personagem modular local; depois entregar um MVP online com lar, cuidados, invocação, inventário, loja e um minigame de mana. Classes completas e pets entram em marcos posteriores.
-
-## Contexto do repositório
-
-Inspeção em 09/11/2026: branch padrão `main`; raiz com `basilis/`, `docs/`, `labs/`, `matrix-sim/`, `mesa-online/`, `prompts/` e `rpg-narrativo-ia/`. Esta ideia é independente: não pressupõe reutilização de código nem migração de outros jogos. A grafia `myDigitalExistence` segue o pedido explícito, apesar da convenção geral de kebab-case.
-
-## Execução e próximos passos
-
-Não há comandos de instalação ou execução nesta etapa. O primeiro passo é confirmar as pendências prioritárias e construir a prova visual descrita no [roadmap](10-roadmap.md). 
-
-## Origem
-
-Síntese dos requisitos de produto fornecidos para esta documentação. Alternativas anteriores de Godot e React Native foram substituídas pela escolha de Unity. Referências visuais conceituais não são assets licenciados nem telas implementadas.
+10. [Roadmap e critérios de validação](10-roadmap.md)
+11. [Decisões e pendências](11-decisoes-pendencias.md)
