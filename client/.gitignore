@@ -6,6 +6,7 @@
 /[Uu]ser[Ss]ettings/
 /[Bb]uild/
 /[Bb]uilds/
+/.utmp/
 
 # Generated IDE files
 /.vs/
