@@ -13,6 +13,8 @@ O catálogo listado nesses arquivos é **CANDIDATO_JOGAVEL**: o agente PODE cria
 
 Na ordem de leitura, incluir os arquivos 22–26 depois dos contratos técnicos e antes de produzir assets de catálogo. O resto das instruções permanece válido.
 
+Para tarefas de arte, use as [fichas de sprites V1](27-especificacao-arte-sprites-v1.md) e o [guia de produção com ChatGPT Images](28-producao-sprites-chatgpt.md). Valide o modelo mestre com o diretor antes de derivar a base animada e as folhas isoladas. Preserve o contrato G1 e entregue o lote com manifesto e evidências de encaixe ao agente Unity. O gerador PowerShell reproduz a arte provisória do protótipo.
+
 ## Autoridade obrigatória
 **O usuário define conosco a parte criativa:** aparência do personagem e suas proporções; estilo, cabelos, rostos, raças, classes, elementos, habilidades, equipamentos, pets, universo/lore e as decisões conceituais que mudam a experiência (invocação, evolução, economia, mana e mecânicas). O agente pode propor alternativas e explicar trade-offs; **não transformar propostas em cânone sem aprovação explícita do criador**.
 

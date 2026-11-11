@@ -1,8 +1,8 @@
 # Especificação de arte e prompts para sprites V1
 
-**Estado da arte descrita** · `CANDIDATO_JOGAVEL` · Referência técnica conferida em `08561d3`, Unity `6000.0.40f1`.
+**Estado da arte descrita** · `CANDIDATO_JOGAVEL` · Contrato conferido no catálogo, nos importadores e nos testes do protótipo em `86f1a01`, Unity `6000.0.40f1`.
 
-Este documento complementa o [pipeline visual](18-pipeline-visual.md), o [catálogo V1](22-pacote-conteudo-v1.md) e o [plano de conteúdo](26-plano-conteudo-e-aceite.md). Claude produz e entrega os PNGs, fontes e fichas de arte. O agente Unity resolve importação, catálogo, referências, composição, testes e uso no jogo. A aprovação visual final segue a [governança criativa](15-governanca-criativa.md).
+Este documento complementa o [pipeline visual](18-pipeline-visual.md), o [catálogo V1](22-pacote-conteudo-v1.md) e o [plano de conteúdo](26-plano-conteudo-e-aceite.md). Use o [guia de sessão e prompts](28-producao-sprites-chatgpt.md) para gerar as peças com ChatGPT Images, normalizar as folhas e preparar a entrega. O agente Unity recebe os arquivos validados e cuida da importação, composição e testes. A aprovação visual final segue a [governança criativa](15-governanca-criativa.md).
 
 ## 1. Uso no ciclo existente
 
@@ -26,32 +26,20 @@ As poses de combate, locomoção e os estudos de visual avançado abaixo são re
 - Ordem observada no quarto **Room −20 → sombra −10 → corpo 0 → torso 10 → cabelo 20 → mão 30**. `prototype_room.png` é fundo único **192 × 336 px**. `contact_shadow.png` é sombra única **46 × 12 px**. A grade e o pivô do humanoide se aplicam às sete folhas de peças, enquanto fundo e sombra seguem suas referências próprias.
 - As folhas existentes são cortadas via `.meta` e o catálogo aponta diretamente para os sprites. O projeto conferido não possui `.spriteatlas`. Em uma integração futura, preserve GUIDs, nomes e IDs locais dos subsprites existentes e valide as referências antes de substituir qualquer textura.
 
-## 3. Prompt mestre para Claude
+## 3. Produção com ChatGPT Images
 
-> Produza arte original candidata para myDigitalExistence, fantasia aventureira em pixel art 2D, corpo inteiro frontal, com leitura na tela de um Android em retrato. Leia as fichas deste documento e os capítulos 22–26 do repositório. Use os PNGs atuais como referência de grade, âncoras e gesto. Para cada entrega, use o mesmo mestre de poses e recorte cada componente da composição aprovada em uma camada isolada. Trabalhe em pixels inteiros, com grupos de cor nítidos, luz suave superior esquerda, sombras em blocos pequenos, contraste na silhueta e rosto legível. Mantenha RGB e transparência RGBA no export. Deixe o fundo totalmente transparente nas peças. Exclua texto, marcas d'água, guias, fundo quadriculado pintado, desfoque, antialiasing, pixels semitransparentes acidentais e elementos de franquias. Vidro, sombra e VFX podem ter alpha intencional.
->
-> Comece pela comparação montada de corpo equilibrado, cabelo curto, túnica de linho e Lâmina de Freixo, em idle e reação. Inclua uma comparação de mãos livres. Use a mesma pose, paleta, proporção e iluminação nas duas aparências. Trave os mestres antes de produzir variações em série. Gere cada pose-chave com a referência da anterior e corrija à mão os pixels, se necessário. Entregue camadas alinhadas com o mesmo canvas, contatos e pivôs. Se a ferramenta só produzir pranchas compostas, separe e revise as peças em editor de pixels antes da entrega. Entregue apenas os lotes associados ao pedido de produção.
->
-> Em cada ficha, use o ID fornecido, aplique o motivo visual da tabela e declare função, vista, corpo compatível, quadro, âncoras, oclusão, duração, fallback e caminho de saída. Registre autoria, ferramenta, fonte editável e condições de uso. Mostre a composição sobre fundo claro e escuro e na escala de jogo. Compare o primeiro e último quadro em loop. Encaminhe inconsistências e arquivos pendentes ao agente Unity na ficha de entrega.
+Aprove uma prancha do modelo mestre antes de animar o corpo. A base animada e suas âncoras por quadro passam a ser a referência de todas as peças. Gere uma folha por componente visual e variante, inclusive uma folha para o cabelo frontal e outra para o traseiro quando houver pixels nessa camada. Monte as combinações para validar e derive os PNGs compatíveis com o catálogo G1 a partir das fontes modulares.
 
-**Modelo para uma solicitação unitária**
-
-```text
-Gere <id> para <slot>, variante <corpo/paleta>, frontal.
-Use <arquivo mestre e versão>, célula <animação e índice>.
-Desenhe <motivo da ficha>. Alinhe <âncoras> e respeite <oclusões>.
-Exporte <caminho>, <dimensões>, PNG RGBA, pivô <x,y>.
-Mostre <combinação de QA> e registre <fallback ou peça oculta>.
-```
+O [gerador PowerShell](client/Tools/Generate-PrototypeArt.ps1) reproduz a arte provisória do protótipo. Use essa arte como referência de grade, pivô e gesto. Para produzir os novos candidatos, use as imagens geradas e os ajustes em editor de pixels conforme o [guia de produção](28-producao-sprites-chatgpt.md).
 
 ## 4. Arquivos, âncoras e atlas de entrega
 
-Pasta candidata para a próxima tarefa de arte, `client/Assets/Game/Art/ContentV1/`. Consulte as instruções locais antes de publicar. Organize `g1_compat/`, `character/<part_id>/<variant>/`, `room/`, `icons/`, `runes/` e `fx/`. Guarde mestres editáveis, guias, pranchas de revisão e `manifest.json` fora de `Assets`, em `art-source/content-v1/`. Guarde uma representação separada para cada função visual mesmo quando os arquivos compartilham um ID de jogo.
+Prepare o lote em `art-source/content-v1/`, fora de `Assets`. Guarde os mestres editáveis, referências, folhas por camada, pranchas e `manifest.json` conforme o [layout de entrega](28-producao-sprites-chatgpt.md#arquivos-e-manifesto). `client/Assets/Game/Art/ContentV1/` é um destino candidato para a tarefa de integração. Guarde uma representação separada para cada função visual mesmo quando os arquivos compartilham um ID de jogo.
 
 | Saída | Especificação |
 | --- | --- |
-| Folhas compatíveis | `g1_compat/<id>.png`, sete células na ordem G1. Entregue as sete peças listadas na seção 5, mais quarto e sombra como PNGs individuais. O agente Unity faz a troca de referências. |
-| Peça modular | `<part_id>__<animation_id>__front__<nn>.png`, índice de dois dígitos por estado, célula inteira 96 × 128 px. Variante de corpo ou paleta no diretório e manifesto. Para cabelo dividido, mantenha o ID do corte e declare subcamada `front`/`back` no diretório e na ficha. |
+| Folhas compatíveis | `g1_compat/<id>.png`, sete células na ordem G1. Os sete IDs com † nas seções 5 e 7 compõem o lote completo, mais quarto e sombra em PNGs individuais. O agente Unity faz a troca de referências. |
+| Peça modular | `<part_id>__<layer>__front.png`, uma folha por peça, camada e variante. Cada célula do lote G1 tem 96 × 128 px. `front` no fim indica a vista. Use `hair_front` ou `hair_back` no campo de camada e preserve o ID do corte. |
 | Ícones | PNG 32 × 32 px como amostra, pivô central, margem transparente de 2 px. Silhueta isolada e legível sem texto. Um ícone para cada equipamento, runa e entrada visual de habilidade. |
 | Efeitos e props | PNGs por quadro. Efeito vestido usa a grade do personagem. Efeito local pode usar 32 × 32 px, ancorado na mão, objeto, chão ou alvo conforme a ficha. Runa tem pedra estática e emissão em folha separada. |
 | Atlas Unity futuro | Agrupar por uso simultâneo em quarto, ícones e efeitos, com runas separadas se só carregadas na invocação. Para sprites modulares, começar com rotação e tight packing desligados, malha Full Rect e padding de 4 px. Conferir bleeding e tamanho em Android antes de escolher tamanho de página e compressão. Empacotar os mesmos sprites na Unity, sem entregar uma segunda cópia dos PNGs dentro de `Assets`. |
@@ -64,7 +52,7 @@ O manifesto registra para cada variante `assetId`, ID de catálogo, status, vers
 
 ## 5. Fichas de personagem, personalização e cenário
 
-Cada linha complementa o prompt mestre. Renderize os elementos visíveis em todos os quadros da ação solicitada. A seção 6 define a sequência. Os sete IDs marcados com † integram as folhas G1.
+Cada linha complementa os prompts do [guia de produção](28-producao-sprites-chatgpt.md). Renderize os elementos visíveis em todos os quadros da ação solicitada. A seção 6 define a sequência. Os sete IDs marcados com † nesta seção e na seção 7 integram as folhas G1.
 
 | ID ou família | Instrução de desenho |
 | --- | --- |
@@ -173,7 +161,7 @@ No estudo de Espadachim, destaque a guarda e a lâmina estreita. No de Arcanista
 
 ## 10. Aceite do lote e passagem para Unity
 
-- Claude entrega o manifesto e os PNGs com dimensões, ordem e nomes verificáveis, as fontes que puder redistribuir, pranchas de referência com fundo claro/escuro e previews dos loops. A prancha identifica a versão do mestre e as combinações.
+- Entregue o manifesto, os PNGs normalizados, as fontes que puder redistribuir, as pranchas com fundo claro/escuro e os previews dos loops. Identifique a versão do mestre, as combinações testadas e os resultados no [checklist de entrega](28-producao-sprites-chatgpt.md#validação-e-entrega).
 - Confira os sete recortes de cada folha compatível e a coincidência do pivô. Teste troca de cabelo, torso e item no mesmo quadro, reação e mãos livres. Para as camadas futuras, compare todos os corpos com roupa base, os quatro cabelos com faixa/capuz e cauda com capa. Inspecione pele e olhos claros e escuros e cada contato nas poses de cuidado.
 - Na Unity, verifique Sprite Multiple, alpha, Point, PPU, pivôs e IDs. Use [PrototypeAppearanceTests](client/Assets/Game/Tests/EditMode/PrototypeAppearanceTests.cs) e [HomeFlowTests](client/Assets/Game/Tests/PlayMode/HomeFlowTests.cs) na fatia compatível. Depois confirme composição e leitura em retrato no Android e registre aparelho, FPS e memória conforme ART-09.
 - Registre previews e resultados por lote, versões de fontes, incompatibilidades conhecidas e fallback explícito. A aprovação criativa e os aceites por gate seguem seus documentos de origem.

@@ -41,7 +41,7 @@ O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame d
 Em Play Mode, inicie pela Bootstrap e selecione **Abrir quarto**. Os controles alternam dois cabelos, duas roupas e duas peças de mão, com a opção **Mãos livres**. **Interagir** dispara uma reação e devolve o personagem ao idle. As escolhas duram enquanto a cena está aberta.
 
 - [Home](client/Assets/Game/Scenes/Home.unity), [prefab humanoide](client/Assets/Game/Prefabs/PrototypeHumanoid.prefab) e [catálogo de aparência v1](client/Assets/Game/Content/PrototypeAppearance.asset). Os IDs são estáveis, e o catálogo registra a compatibilidade com o corpo equilibrado e a ordem de cada quadro.
-- [Sprites originais provisórios](client/Assets/Game/Art/Prototype) em estado `CANDIDATO_JOGAVEL`. Para a vista frontal, usei quadros de 96 × 128 px, pivô em (48, 11) a partir do canto inferior esquerdo, 32 PPU, filtro Point, quatro quadros de idle e três de reação. A [fonte dos sprites](client/Tools/Generate-PrototypeArt.ps1) pode regenerar os nove PNGs pelo PowerShell no Windows. Preserve os arquivos `.meta` para manter as referências.
+- [Sprites originais provisórios](client/Assets/Game/Art/Prototype) em estado `CANDIDATO_JOGAVEL`. O contrato frontal usa quadros de 96 × 128 px, pivô em (48, 11) a partir do canto inferior esquerdo, 32 PPU, filtro Point, quatro quadros de idle e três de reação. O [gerador PowerShell](client/Tools/Generate-PrototypeArt.ps1) reproduz os nove PNGs do protótipo. Para novos lotes de arte, siga o [guia de folhas modulares com ChatGPT Images](28-producao-sprites-chatgpt.md). Preserve os arquivos `.meta` para manter as referências.
 - **Validação no Unity 6000.0.40f1.** Três EditMode passaram, incluindo IDs, dimensões, pivôs, compatibilidade e referências do prefab. Um PlayMode passou, cobrindo navegação, trocas no mesmo quadro, ordem das camadas, mãos livres e retorno ao idle. O Device Simulator mostrou a composição e os controles em retrato nos perfis Pixel 5 e Galaxy S10e.
 
 - **APK do G1.** O build Android levou 322 s e o relatório Unity registrou sucesso, com zero erros e zero avisos. As cenas Bootstrap e Home foram incluídas. O manifesto e a assinatura de depuração foram verificados. O APK da prévia tem 44.068.185 bytes e SHA-256 `3163a52c647add507d0bb26d5b6e7e8a562099559e0f82d23f20b7235cd0ec45`.
@@ -75,6 +75,8 @@ Em Play Mode, inicie pela Bootstrap e selecione **Abrir quarto**. Os controles a
 24. [Runas, raças, classes e habilidades](24-runas-racas-classes-habilidades.md)
 25. [Equipamentos iniciais](25-equipamentos-iniciais.md)
 26. [Plano de conteúdo e critérios de aceite](26-plano-conteudo-e-aceite.md)
+27. [Especificação de arte e fichas de sprites V1](27-especificacao-arte-sprites-v1.md)
+28. [Produção de sprites modulares com ChatGPT Images](28-producao-sprites-chatgpt.md)
 
 ## Acordo de execução e criação
 

@@ -37,9 +37,11 @@ O agente pode desenvolver **a engenharia modular** usando placeholders geométri
 
 Esses nomes são exemplificativos de engenharia e não implicam que o jogador terá todos os slots no MVP.
 
-## 3. Contrato gráfico a validar em G1
+## 3. Contrato gráfico e produção de arte
 
-**Não fixar números sem CR-01**. Abrir uma amostra com duas escalas alternativas; validar no telefone e registrar escolha. Fixar depois:
+O [contrato de integração G1](27-especificacao-arte-sprites-v1.md#2-contrato-unity-conferido) usa quadros frontais de 96 × 128 px, pivô (48, 11) a partir do canto inferior esquerdo, 32 PPU, quatro quadros de idle e três de reação. Preserve esses valores em todo export G1. Qualquer alteração desse contrato exige decisão explícita do diretor. O [guia de produção com ChatGPT Images](28-producao-sprites-chatgpt.md) organiza o trabalho em mestre aprovado, base animada, folhas por peça, validação de alinhamento e integração Unity.
+
+Para novas direções, arquétipos e decisões estéticas de CR-01, compare as amostras no telefone e registre a escolha. Defina:
 - resolução de sprite (width/height em pixels) por arquétipo;
 - pixels por Unity unit e câmeras;
 - pivô central do corpo, origem do chão e baseline;
@@ -96,9 +98,9 @@ Não declarar que o jogo terá capacetes, asas ou duas armas porque aparecem em 
 
 ## 7. Importação e nomenclatura de assets
 
-**Padrão proposto** (após aprovar o contrato gráfico):
+**Padrão de produção**:
 - IDs de conteúdo: lowercase_snake_case e únicos.
-- Arquivos arte: partId__animationId__direction__frameIndex.png.
+- Folhas modulares e exports G1 seguem os [nomes do manifesto de produção](28-producao-sprites-chatgpt.md#arquivos-e-manifesto). Os subsprites G1 preservam `partId__animationId__front__frameIndex`.
 - Source files (Aseprite ou equivalente) separados de exports gerados; não obrigar software específico.
 - Guardar arquivo de origem quando licenciado, hash/origem/licença e export settings reproduzíveis.
 - Não rasterizar versões de cor para cada personagem se paleta dinâmica aprovada e viável; medir custo e artefatos antes de decidir.
