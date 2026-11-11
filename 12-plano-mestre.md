@@ -202,6 +202,6 @@ Não declarar gate concluído sem passar no dispositivo e manter evidências. Fa
 
 ## 11. Critérios de encerramento e próximo passo real
 
-Este documento é concluído quando revisado e publicado; **o jogo continua em planejamento**. O G0 usa o projeto Universal 2D existente em `client/` e exige executar o APK da cena Bootstrap em um aparelho Android. Em seguida G1: provar humanoide modular animado e uma troca de peça antes de produzir muitas raças ou itens.
+G0 e G1 foram aceitos após validação dos APKs pelo diretor no celular. O próximo passo do G2 é implementar o domínio de necessidades e testá-lo com tempo controlado em SIM-01 e SIM-02. A integração dos cuidados no quarto vem em SIM-03 e SIM-04.
 
 Acompanhar execução no [backlog](13-backlog-execucao.md), testar segundo [matriz de QA](14-qualidade-validacao.md) e preservar as regras de origem no GDD. A qualquer momento, atualizar o plano se novos fatos do projeto mudarem prioridades.

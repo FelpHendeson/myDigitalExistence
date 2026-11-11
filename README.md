@@ -14,7 +14,7 @@ A invocação define a origem do personagem. Ao longo do jogo, o jogador escolhe
 
 O projeto Universal 2D está em `client/`, com Unity `6000.0.40f1`, URP `17.0.4` e Input System `1.13.0`. A cena Bootstrap abre no Editor e já tem um APK de desenvolvimento compilado. A `SampleScene` original continua em `client/Assets/Scenes/`.
 
-O G0 foi aceito após o diretor confirmar que o APK funcionou no celular. O G1 começa com um humanoide modular que respira, reage e troca peças em um quarto simples. Os critérios estão no [plano mestre](12-plano-mestre.md) e no [backlog](13-backlog-execucao.md).
+O diretor validou no celular os APKs de G0 e G1. O próximo marco, G2, começa pela simulação local de necessidades e pelas ações de cuidado no quarto. Os critérios estão no [plano mestre](12-plano-mestre.md) e no [backlog](13-backlog-execucao.md).
 
 O [MVP proposto](02-gdd-mvp.md) reúne invocação, lar, cuidados, um minigame de mana, progressão inicial, inventário, loja e salvamento online. O fornecedor do backend ainda está em aberto. Classes completas e pets do personagem aparecem em etapas posteriores do [roadmap](10-roadmap.md).
 
@@ -45,7 +45,7 @@ Em Play Mode, inicie pela Bootstrap e selecione **Abrir quarto**. Os controles a
 - **Validação no Unity 6000.0.40f1.** Três EditMode passaram, incluindo IDs, dimensões, pivôs, compatibilidade e referências do prefab. Um PlayMode passou, cobrindo navegação, trocas no mesmo quadro, ordem das camadas, mãos livres e retorno ao idle. O Device Simulator mostrou a composição e os controles em retrato nos perfis Pixel 5 e Galaxy S10e.
 
 - **APK do G1.** O build Android levou 322 s e o relatório Unity registrou sucesso, com zero erros e zero avisos. As cenas Bootstrap e Home foram incluídas. O manifesto e a assinatura de depuração foram verificados. O APK da prévia tem 44.068.185 bytes e SHA-256 `3163a52c647add507d0bb26d5b6e7e8a562099559e0f82d23f20b7235cd0ec45`.
-- **ART-09 e aceite G1 pendentes.** O ADB não listou dispositivo. Falta confirmar o APK em aparelho real, incluindo legibilidade, alinhamento, fluidez e consumo de memória.
+- **G1 validado e aceito em 11/11/2026.** O diretor confirmou o teste do APK `0.1.0-dev.2` em seu celular. O modelo, a versão do Android e as medições de FPS e memória de ART-09 ainda não foram registrados. O catálogo visual segue em `CANDIDATO_JOGAVEL`.
 
 ## Documentação
 

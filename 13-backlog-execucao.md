@@ -37,7 +37,11 @@ Cada cartão possui: ID, dependência, entrega e critério de aceite. Só marcar
 
 **Saída G1:** o usuário consegue observar personagem e ver uma troca real de aparência no celular. Congelar contrato de sprites somente após essa validação.
 
+**G1 validado e aceito em 11/11/2026.** O diretor confirmou a validação em celular do APK [`0.1.0-dev.2`](https://github.com/FelpHendeson/myDigitalExistence/releases/tag/g1-android-dev.2). O resultado é registrado no [README](README.md#protótipo-g1--meu-quarto). As medições de FPS e memória de ART-09 continuam pendentes.
+
 ### Marco G2 — Loop jogável local
+
+**Próximo item:** SIM-01, seguido de SIM-02. A primeira entrega testa as regras de necessidades em C# puro com tempo controlado e prepara a conexão das ações de cuidado ao quarto.
 
 | ID | Prioridade | Depende | Entrega e aceite |
 | --- | --- | --- | --- |
